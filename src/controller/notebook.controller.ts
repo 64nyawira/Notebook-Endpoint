@@ -59,6 +59,41 @@ export function getonenote(req:Request,res:Response){
     }
 }
 
+export function deleteNote(req:Request,res:Response){
+    try {
+        let note_id=req.params.note_id;
+
+        let response = noteService.deleNote(note_id)
+        return res.json({response})
+    } catch (error) {
+        return res.json({
+            error:error
+    })
+    }
+}
+
+export function updateNote(req:Request,res:Response){
+    try {
+        let note_id=req.params.note_id;
+
+        let {title,content,createdAt}= req.body
+        let notebook={
+            id:note_id,
+            title,
+            content,createdAt
+        }
+
+        // let response = noteService.updateNote(note_id)
+        // if(typeof response =="string"){
+        //     return req.json
+        // }
+    } catch (error) {
+        return res.json({
+            error:error
+    })
+    }
+}
+
 export{
     addNote,
 getAllNotes

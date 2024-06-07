@@ -36,13 +36,16 @@ export class notebookService{
         if(notebook_index <0){
             return "notebook not found"
         }else{
-            // Notebooks.splice(notebook_index,1, notebook)
+            Notebooks.splice(notebook_index,1, note)
 
-            // return notebook
+            return notebook
         }
           
         
     }
+
+
+
     fetchNote(){
         return Notebooks
     }
@@ -54,5 +57,19 @@ export class notebookService{
             return notebook
         }
         
+    }
+
+    
+    deleNote(note_id:string){
+        let notebook_index=Notebooks.findIndex(notess=>{
+            return notess.id == note_id
+        })
+        if(notebook_index <0){
+            return "notebook not found"
+        }else{
+            Notebooks.splice(notebook_index,1)
+            return "notebook deleted successfully"
+        }
+       
     }
 }
