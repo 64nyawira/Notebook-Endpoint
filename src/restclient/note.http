@@ -1,0 +1,18 @@
+POST http://localhost:5203/notes/create-new
+Content-Type: application/json
+
+{
+    "title":"computer Graphics",
+    "content":"Introduction to CG",
+    "createdAt":"2023"
+}
+
+###Get all notebooks
+GET http://localhost:5203/notes/all
+Content-Type: application/json
+
+
+
+###Get all notebooks
+GET http://localhost:5203/notes/
+Content-Type: application/json
